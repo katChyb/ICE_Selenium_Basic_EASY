@@ -1,12 +1,10 @@
 package alerts;
-
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import pages.FormPage;
 import setup.TestBase;
 
 import java.time.Duration;
@@ -20,7 +18,6 @@ public class AlertsTest extends TestBase {
 public void successfulSimpleAlertPopUp() {
  driver.get("http://51.75.61.161:9102/alerts.php");
 
- FormPage formPage = new FormPage(driver);
 
   WebElement simpleAlertBtn = driver.findElement(By.id("simple-alert"));
   simpleAlertBtn.click();
@@ -36,7 +33,7 @@ public void successfulSimpleAlertPopUp() {
  public void successfulPromptAlertBox() {
   driver.get("http://51.75.61.161:9102/alerts.php");
 
-  FormPage formPage = new FormPage(driver);
+
 
   WebElement promptAlertBoxBtn = driver.findElement(By.id("prompt-alert"));
   promptAlertBoxBtn.click();
@@ -55,7 +52,7 @@ public void successfulSimpleAlertPopUp() {
  public void successfulConfirmAlert() {
   driver.get("http://51.75.61.161:9102/alerts.php");
 
-  FormPage formPage = new FormPage(driver);
+
 
   WebElement confirmAlertBtn = driver.findElement(By.id("confirm-alert"));
   confirmAlertBtn.click();
@@ -78,7 +75,7 @@ public void successfulSimpleAlertPopUp() {
  public void successfulDelayedAlertPopUp() {
   driver.get("http://51.75.61.161:9102/alerts.php");
 
-  FormPage formPage = new FormPage(driver);
+
 
   WebElement delayedAlertBtn = driver.findElement(By.id("delayed-alert"));
   delayedAlertBtn.click();
