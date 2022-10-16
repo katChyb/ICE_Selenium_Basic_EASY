@@ -1,5 +1,6 @@
-package table;
+package basic;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -13,6 +14,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class Table extends TestBase {
 
     @Test
+    @Tag("Table")
     public void printMountainsInSwitzerlandHigherThan4000() {
 
         //Print out 'Rank', 'Peak' and 'Mountain range' of mountains that are in "Switzerland" and are higher than 4000 m

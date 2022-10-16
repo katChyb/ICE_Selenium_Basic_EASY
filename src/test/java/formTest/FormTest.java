@@ -1,5 +1,6 @@
 package formTest;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -15,6 +16,7 @@ public class FormTest extends TestBase {
 
 
     @Test
+    @Tag("Form")
     public void FillingFormWithSuccess() {
 
         driver.get("http://51.75.61.161:9102/form.php");

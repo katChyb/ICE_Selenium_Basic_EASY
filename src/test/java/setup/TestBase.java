@@ -12,7 +12,6 @@ public class TestBase {
 public WebDriver driver;
 
 
-
     @BeforeAll
     static void setupDriver() {
         WebDriverManager.chromedriver().setup();
@@ -29,6 +28,16 @@ public WebDriver driver;
     void tearDown() {
         driver.quit();
 
+    }
+
+    public void loopForNewWindow(String originalWindow) {
+
+        for (String windowHandle : driver.getWindowHandles()) {
+            if (!originalWindow.contentEquals(windowHandle)) {
+                driver.switchTo().window(windowHandle);
+                break;
+            }
+        }
     }
 }
 

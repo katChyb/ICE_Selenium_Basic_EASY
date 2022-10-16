@@ -1,4 +1,5 @@
 package formTest;
+import org.junit.jupiter.api.Tag;
 import setup.TestBase;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
@@ -9,6 +10,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 public class FormTestWithPO extends TestBase {
 
     @Test
+    @Tag("FormWithPO")
     public void FillingFormWithSuccess() {
 
         driver.get("http://51.75.61.161:9102/form.php");
@@ -27,7 +29,8 @@ public class FormTestWithPO extends TestBase {
         formPage.addingFileToForm();
         formPage.sendBtn();
         formPage.getValidatorMessage();
-        assertThat(formPage.getValidatorMessage().equals("Form send with success"));
+        assertThat(formPage.getValidatorMessage()).isEqualTo("Form send with success");
+
 
 
     }

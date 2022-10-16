@@ -1,5 +1,6 @@
-package iframe;
+package basic;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -11,6 +12,7 @@ import java.util.Random;
 public class Iframe extends TestBase {
 
     @Test
+    @Tag("Iframe")
     public void IframeSuccessfulFillingForm(){
 
         driver.get("http://automation-practice.emilos.pl/iframes.php");
