@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.WindowType;
+
 import org.openqa.selenium.support.ui.WebDriverWait;
 import setup.TestBase;
 
@@ -25,6 +25,8 @@ public class Windows_tabs extends TestBase {
         driver.get("http://51.75.61.161:9102/windows-tabs.php");
 
         String originalWindow = driver.getWindowHandle();
+
+        //Click on 'New Browser Window'
         driver.findElement(By.id("newBrowserWindow")).click();
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(numberOfWindowsToBe(2));
@@ -69,7 +71,6 @@ public class Windows_tabs extends TestBase {
         driver.findElement(By.id("newBrowserTab")).click();
         wait.until(numberOfWindowsToBe(2));
         loopForNewWindow(originalWindow);
-        driver.switchTo().newWindow(WindowType.TAB);  // Opens a new tab and switches to new tab
         List<WebElement> newTabAllRows = driver.findElements(By.cssSelector("tbody tr"));
         assertThat(newTabAllRows.size()).isGreaterThan(0);
 
@@ -87,8 +88,5 @@ public class Windows_tabs extends TestBase {
 
         }
         driver.close();
-
     }
-
-
 }
