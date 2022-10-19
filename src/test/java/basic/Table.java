@@ -22,7 +22,7 @@ public class Table extends TestBase {
         driver.get("http://51.75.61.161:9102/table.php");
 
         List<WebElement> allRows = driver.findElements(By.cssSelector("tbody tr"));
-        assertThat((allRows.size()) > 0);
+        assertThat(allRows.size()).isGreaterThan(0);
 
 
         for (WebElement row : allRows) {
