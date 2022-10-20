@@ -60,10 +60,10 @@ public class ModalDialog extends TestBase {
     }
 
 
-    @Test
-    @Tag("Modal dialog with dataprovider")
-    @ParameterizedTest
-    @MethodSource("DataProvider#testData")
+
+    @Tag("Modal dialog with provider")
+    @ParameterizedTest (name = "{0} test with provided data")
+    @MethodSource("setup.DataProvider#inputData")
     public void modalDialogWithDataprovider(String nameData, String emailData, String passwordData) {
 
 
@@ -102,7 +102,7 @@ public class ModalDialog extends TestBase {
             System.out.println(name + " " + email + " " + password);
         }
 
-        assertThat(allRows.get(1).getText()).isEqualTo(nameData + emailData + passwordData);
+        assertThat(allRows.get(1).getText()).isEqualTo(nameData +" "+ emailData + " " + passwordData);
 
     }
 
